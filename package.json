@@ -1,0 +1,17 @@
+{
+  "name": "gulp-email-template-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.11.5",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-inline-css": "^3.5.0",
+    "gulp-posthtml": "^3.0.5",
+    "posthtml-include": "^1.4.3"
+  }
+}
