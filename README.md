@@ -45,6 +45,42 @@ Included in the src folder is an example setup. All `blocks` are in a separate f
 </table>
 ```
 
+### Pass Props to Blocks
+
+To pass props use the `locals` props on the `<include/>`, then on the child, use `{{ VARIABLE_NAME }}`.
+
+```html
+<!-- Parent Component -->
+<table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell">
+  <tr>
+    <td class="td" style="width: 650px; min-width: 650px; font-size: 0pt; line-height: 0pt; padding: 0; margin: 0; font-weight: normal">
+      <!-- The include markup is where the magic happens -->
+      <include src="blocks/header.html"></include>
+      <include
+        src="blocks/feature-one.html"
+        locals='{ "primaryColor": "#1e52bd", "secondaryColor": "#e85711"}'
+      ></include>
+      <!-- include more blocks here -->
+      <include src="blocks/footer.html"></include>
+    </td>
+  </tr>
+</table>
+
+<!-- Child Component -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="color:{{ primaryColor }};">
+      <multiline>Primary Color Goes Here</multiline>
+    </td>
+  </tr>
+  <tr>
+    <td style="color:{{ secondaryColor }};">
+      <multiline>Secondary Color Goes Here</multiline>
+    </td>
+  </tr>
+</table>
+```
+
 ## 📝 License
 
 Licensed under the [MIT License](./LICENSE).
